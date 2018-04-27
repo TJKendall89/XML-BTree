@@ -1,0 +1,8 @@
+﻿  main.cpp
+c:\users\tjkendall\desktop\btree\btree\doortasks.h(120): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  CParseLevel.cpp
+c:\users\tjkendall\desktop\btree\btree\doortasks.h(120): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+c:\users\tjkendall\desktop\btree\btree\doortasks.h(137): warning C4715: 'UnlockDoorTask::run': not all control paths return a value
+  BTree.vcxproj -> C:\Users\tjkendall\Desktop\BTree\Debug\BTree.exe
+          1 file(s) copied.
