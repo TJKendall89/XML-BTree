@@ -1,8 +1,10 @@
-﻿  main.cpp
-c:\users\tjkendall\desktop\btree\btree\doortasks.h(120): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+﻿  Utility.cpp
+  MSDefines.cpp
+  main.cpp
+c:\users\tjkendall\documents\github\solo-project\btree\btree\main.cpp(6): fatal error C1083: Cannot open include file: 'DoorTasks.h': No such file or directory
+  CParseXML.cpp
+c:\users\tjkendall\documents\github\solo-project\btree\btree\cparsexml.h(14): fatal error C1083: Cannot open include file: 'expat.h': No such file or directory
   CParseLevel.cpp
-c:\users\tjkendall\desktop\btree\btree\doortasks.h(120): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\tjkendall\documents\github\solo-project\btree\btree\cparsexml.h(14): fatal error C1083: Cannot open include file: 'expat.h': No such file or directory
+  CFatalException.cpp
   Generating Code...
-c:\users\tjkendall\desktop\btree\btree\doortasks.h(137): warning C4715: 'UnlockDoorTask::run': not all control paths return a value
-  BTree.vcxproj -> C:\Users\tjkendall\Desktop\BTree\Debug\BTree.exe
-          1 file(s) copied.
