@@ -37,7 +37,7 @@ public:
 	CParseXML();
 
 private:
-	// Disallow use of copy constructor and assignment operator (private and not defined)
+	// Disallow use of copy constructor and assignment operator (private and not defined)aa		
 	CParseXML( const CParseXML& );
 	CParseXML& operator=( const CParseXML& );
 
