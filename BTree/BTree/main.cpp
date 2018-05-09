@@ -4,6 +4,7 @@
 #include <list>
 
 #include "TasksDoor.h"
+#include "TasksPrey.h"
 #include "CParseLevel.h"
 
 int selection = 0;
@@ -63,6 +64,77 @@ void DoorExample()
 	std::cout << std::endl << "Operation complete.  Behaviour tree exited." << std::endl;
 }
 
+
+void PreyExample()
+{
+	//Build area
+
+	//Create nodes
+	Sequence *root = new Sequence, *sequence1 = new Sequence, *sequence2 = new Sequence;;  // Note that root can be either a Sequence or a Selector, since it has only one child.
+	Selector *selector1 = new Selector, *selector2 = new Selector;  // In general there will be several nodes that are Sequence or Selector, so they should be suffixed by an integer to distinguish between them.
+
+																	//Set door status
+	const int AREA_SIZE_X = 10;
+	const int AREA_SIZE_Y = 10;
+	Area* area = new Area{ 2, false, true, true };
+
+	//Set climate
+	Climate* climate = new Climate{ 0, false, fine };
+
+	//Inititalise tasks
+	CheckForFood* check = new CheckForFood(area);
+	FindFood* search = new FindFood(area);
+	ConsumeFood* eat = new ConsumeFood(area);
+
+	//Root
+	root->addChild(sequence1);
+
+	//Depth 1
+	sequence1->addChild(check);
+	sequence1->addChild(sequence2);
+	sequence1->addChild(selector1);
+
+	//Depth 2
+	sequence2->addChild(search);
+	sequence2->addChild(eat);
+
+
+	// If the operation starting from the root fails, keep trying until it succeeds.
+	while (!root->run())
+	{
+		climate->days++;
+		std::cout << "Days passed: " << climate->days << std::endl;
+
+
+		std::cin.get();
+
+		if (climate->days == 6)
+			area->richness = 2;
+
+
+		if (climate->days == 10)
+		{
+			area->richness = 3;
+			area->safe = false;
+		}
+
+		if (climate->days == 12)
+			area->safe = true;
+
+		if (climate->days == 15)
+			area->safe = false;
+
+		if (daysHungry > 7)
+		{
+			std::cout << "Died" << std::endl;
+			break;
+		}
+
+		std::cout << "--------------------" << std::endl;
+	}
+
+	std::cout << std::endl << "Operation complete.  Behaviour tree exited." << std::endl;
+}
 
 
 void main() 

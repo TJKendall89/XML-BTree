@@ -71,7 +71,7 @@
     <ClInclude Include="TasksDoor.h">
       <Filter>Header Files\BehaveTree</Filter>
     </ClInclude>
-    <ClInclude Include="TasksGuard.h">
+    <ClInclude Include="TasksPrey.h">
       <Filter>Header Files\BehaveTree</Filter>
     </ClInclude>
   </ItemGroup>
